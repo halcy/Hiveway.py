@@ -2,11 +2,11 @@ Mastodon.py^H^H^H^H^H^H^H^H^HHiveway.py
 ===========
 .. code-block:: python
 
-   from mastodon import Mastodon
+   from mastodon import Mastodon as Hiveway
 
    # Register app - only once!
    '''
-   Mastodon.create_app(
+   Hiveway.create_app(
         'pytooterapp',
         api_base_url = 'https://mastodon.social',
         to_file = 'pytooter_clientcred.secret'
@@ -15,11 +15,11 @@ Mastodon.py^H^H^H^H^H^H^H^H^HHiveway.py
 
    # Log in - either every time, or use persisted
    '''
-   mastodon = Mastodon(
+   hiveway = Hiveway(
        client_id = 'pytooter_clientcred.secret',
        api_base_url = 'https://mastodon.social'
    )
-   mastodon.log_in(
+   hiveway.log_in(
        'my_login_email@example.com',
        'incrediblygoodpassword',
        to_file = 'pytooter_usercred.secret'
@@ -27,12 +27,12 @@ Mastodon.py^H^H^H^H^H^H^H^H^HHiveway.py
    '''
 
    # Create actual API instance
-   mastodon = Mastodon(
+   hiveway = Hiveway(
        client_id = 'pytooter_clientcred.secret', 
        access_token = 'pytooter_usercred.secret',
        api_base_url = 'https://mastodon.social'
    )
-   mastodon.toot('Tooting from python using #mastodonpy !')
+   hiveway.toot('Tooting from python using #mastodonpy !')
 
 Python wrapper for the Mastodon ( https://github.com/tootsuite/mastodon/ ) API. 
 Feature complete for public API as of Mastodon version 2.2.0 and easy to get started with.
